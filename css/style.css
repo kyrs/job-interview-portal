@@ -1,0 +1,97 @@
+
+img {
+  display: inline-block;
+    width: 75%;
+    height: auto;
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 70px;
+    align-self: center;
+}
+table{
+  display: inline-block;
+  padding: 20px;
+  align-self: center;
+}
+mark{
+    background-color: #ffffff;
+}
+form{
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+
+video {
+  vertical-align: top;
+  --width: 20vw;
+  width: var(--width);
+  height: calc(var(--width) * 0.5625);
+}
+
+video:last-of-type {
+  margin: 50px 0 20px 0;
+}
+
+video#gumVideo {
+  margin: 0 20px 20px 0;
+}
+canvas{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1
+  }
+
+html input[type=button] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    padding: 6px;
+}
+html input[type=text] {
+    width: 50%;
+    display: inline-block;
+    padding: 10px;
+}
+.form-horizontal{
+  margin-right: 100px;
+}
+#logout{
+  cursor: pointer;
+}
+#heading{
+  text-align: center;
+}
+#user{
+  color: #ffffff;
+}
+#product_image{
+  width:60%;
+}
+
+#progress_bar {
+  width: 30%;
+  background-color: #ddd;
+  margin: 40px 0;
+}
+
+#message_container1, #message_container2
+{
+  display: none;
+  position : fixed;
+  vertical-align: center;
+  align-items: center;
+  top: 280px;
+  left: 450px;
+  z-index: 1;
+  height:400px;
+  width: 400px;
+}
+.bs-example{
+    margin: 20px;
+  }
+
