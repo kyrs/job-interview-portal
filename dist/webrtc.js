@@ -56,7 +56,7 @@ recordButton.addEventListener('click', () => {
        console.log("started recording");
       console.log("counter : "+ counter);
     }else{
-      quesMsgElement.innerHTML ="<h2>" +"Thank you for your answers. The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
+      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
       recordButton.textContent="Next.";
     }
     
