@@ -56,11 +56,11 @@ recordButton.addEventListener('click', () => {
        console.log("started recording");
       console.log("counter : "+ counter);
     }else{
-      quesMsgElement.innerHTML ="<h2>" +"Thank you for participating, press Download button to download the video"+"</h2>";
-      recordButton.textContent="Download";
+      quesMsgElement.innerHTML ="<h2>" +"Thank you for your answers. The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
+      recordButton.textContent="Next.";
     }
     
-  }else if (recordButton.textContent==="Download"){
+  }else if (recordButton.textContent==="Next."){
     console.log("leng of final recor blobs"+ recordedBlobs.length);
   
   // BUG : FOR SOME REASON SECOND VIDEOS HAVE AN EXTRA BLOB FROM LAST VIDEO FILE
@@ -201,7 +201,7 @@ async function init(constraints) {
    errorMsgElement.innerHTML="";
     document.getElementById('suggestions').style.display = "none";
    document.getElementById('checkButton').style.display ="inline-block";
-   quesMsgElement.innerHTML ="<h2>" +"Hello, Nice to meet you. I am the HR Manager and i will conduct this job interview. Press \"Start record\" to get stated." +"</h2>";
+   quesMsgElement.innerHTML ="<h2>" +"Hello.The job interview will be conducted via this platform. Press “Start Record” to get started" +"</h2>";
    
    // setting up the question list to ask
    // var compReader = JSON.parse(compQues);
