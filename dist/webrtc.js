@@ -9,7 +9,7 @@
 // This code is adapted from
 // https://rawgit.com/Miguelao/demos/master/mediarecorder.html
 
-// modiefied by : Kumar shubham( 28-07-2019) 
+// modified by : Kumar shubham( 28-07-2019) 
 
 'use strict';
 
@@ -33,36 +33,12 @@ const progressTextSel =document.getElementById('progressText');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
 const userId = document.getElementById('file_name');
+// const downloadButton  = document.querySelector('button#download');
+const password = document.getElementById('auth_pass');
 
-recordButton.addEventListener('click', () => {
-  if (recordButton.textContent === 'Start Record') {
-    // startRecording();
-    recordButton.textContent="Next";
-    quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
-    console.log("started recording");
-    startRecording();
-  } else if (recordButton.textContent==="Next") {
-    console.log("stopped recording");
-    sleep(500);
-    stopRecording();
-    allVideoList.push(recordedBlobs);
-    console.log("total video file recorded." + allVideoList.length);
-    if (counter<questionReader.length-1){      
-      counter+=1;
-       quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
-       // for some reason recordblobs list is not starting with meta blob list. 
-
-       startRecording();
-       console.log("started recording");
-      console.log("counter : "+ counter);
-    }else{
-      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
-      recordButton.textContent="Next.";
-    }
-    
-  }else if (recordButton.textContent==="Next."){
-    console.log("leng of final recor blobs"+ recordedBlobs.length);
-  
+document.querySelector('#download').addEventListener('click', () => {
+ if (password.value== "iiit"){
+  errorMsgElement.innerHTML = "";
   // BUG : FOR SOME REASON SECOND VIDEOS HAVE AN EXTRA BLOB FROM LAST VIDEO FILE
   for(var i =0;i<allVideoList.length;i++){
      // SOLVING THE BUG, pushing the missing bug back in the list
@@ -94,6 +70,7 @@ recordButton.addEventListener('click', () => {
      console.log("filename. "+ filename);
      zip.file(fileIdName+"-"+filename+".webm", data, {binary:true});
      count++;
+     console.log(count);
      if (count == allUrlList.length) {
       updatePercent(1|0);
        zip.generateAsync({type:"blob"}, function updateCallback(metadata) {
@@ -108,18 +85,56 @@ recordButton.addEventListener('click', () => {
      }
   });
 });
+   allVideoList=[];
+ }
+  else{
+    errorMsgElement.innerHTML = "wrong password. Please try again.";
+    console.log(password.value);
+  }
+});
 
+recordButton.addEventListener('click', () => {
+  if (recordButton.textContent === 'Start Record') {
+    // startRecording();
+    recordButton.textContent="Next";
+    quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
+    console.log("started recording");
+    startRecording();
+  } else if (recordButton.textContent==="Next") {
+    console.log("stopped recording");
+    sleep(500);
+    stopRecording();
+    allVideoList.push(recordedBlobs);
+    console.log("total video file recorded." + allVideoList.length);
+    if (counter<questionReader.length-1){      
+      counter+=1;
+       quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
+       // for some reason recordblobs list is not starting with meta blob list. 
 
+       startRecording();
+       console.log("started recording");
+      console.log("counter : "+ counter);
+    }else{
+      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
+      recordButton.textContent="Next.";
+    }
+    
+  }else if (recordButton.textContent==="Next."){
+    document.getElementById('authentication').style.display ="inline-block";
+    document.getElementById('gum').style.display ="none";
+    quesMsgElement.style.display="none"
+    document.getElementById('checkButton').style.display ="none";
 
-
-   allVideoList=[]; 
+    console.log("leng of final recor blobs"+ recordedBlobs.length);
+  
+   
   }
 });
 
 function processTextName(text){
   // function for removing special character and creating readable video name
-  text = text.replace("?","");
-  text = text.replace(".","");
+  text = text.replace(/[&\/\\#,+()$~%.'":*?<>{}.]/g, ' ');
+  console.log("text out : "+text);
 return text;
 }
 
