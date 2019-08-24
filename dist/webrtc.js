@@ -32,9 +32,21 @@ const quesMsgElement = document.querySelector('span#quesMssg');
 const progressTextSel =document.getElementById('progressText');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
-const userId = document.getElementById('file_name');
-// const downloadButton  = document.querySelector('button#download');
+const userId =    document.getElementById('file_name');
+// const gifVisible = document.getElementById('gifLoad');
+
 const password = document.getElementById('auth_pass');
+
+function showButton(){
+        // gifVisible.style.display = "block";
+        recordButton.style.display ="none";
+        setTimeout(hideButton, 3000); // 5 seconds
+      }
+
+function hideButton(){
+      // gifVisible.style.display = "none";
+      recordButton.style.display = "block";
+      };
 
 document.querySelector('#download').addEventListener('click', () => {
  if (password.value== "iiit"){
@@ -99,18 +111,21 @@ recordButton.addEventListener('click', () => {
     recordButton.textContent="Next";
     quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
     console.log("started recording");
+    showButton();
+
     startRecording();
   } else if (recordButton.textContent==="Next") {
     console.log("stopped recording");
+    showButton();
     sleep(500);
     stopRecording();
+    
     allVideoList.push(recordedBlobs);
     console.log("total video file recorded." + allVideoList.length);
     if (counter<questionReader.length-1){      
       counter+=1;
        quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
        // for some reason recordblobs list is not starting with meta blob list. 
-
        startRecording();
        console.log("started recording");
       console.log("counter : "+ counter);
