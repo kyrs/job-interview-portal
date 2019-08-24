@@ -32,7 +32,8 @@ const quesMsgElement = document.querySelector('span#quesMssg');
 const progressTextSel =document.getElementById('progressText');
 const recordedVideo = document.querySelector('video#recorded');
 const recordButton = document.querySelector('button#record');
-const userId =    document.getElementById('file_name');
+const firstName =    document.getElementById('first_name');
+const lastName = document.getElementById('last_name');
 // const gifVisible = document.getElementById('gifLoad');
 
 const password = document.getElementById('auth_pass');
@@ -40,7 +41,7 @@ const password = document.getElementById('auth_pass');
 function showButton(){
         // gifVisible.style.display = "block";
         recordButton.style.display ="none";
-        setTimeout(hideButton, 3000); // 5 seconds
+        setTimeout(hideButton, 20000); 
       }
 
 function hideButton(){
@@ -116,13 +117,13 @@ recordButton.addEventListener('click', () => {
     startRecording();
   } else if (recordButton.textContent==="Next") {
     console.log("stopped recording");
-    showButton();
     sleep(500);
     stopRecording();
     
     allVideoList.push(recordedBlobs);
     console.log("total video file recorded." + allVideoList.length);
-    if (counter<questionReader.length-1){      
+    if (counter<questionReader.length-1){
+    showButton();      
       counter+=1;
        quesMsgElement.innerHTML ="<h2>" +questionReader[counter]+"</h2>";
        // for some reason recordblobs list is not starting with meta blob list. 
@@ -284,12 +285,13 @@ document.querySelector('#start').addEventListener('click', async () => {
     }
   };
   console.log('Using media constraints:', constraints);
-  if (userId.value !=""){
-    fileIdName = userId.value;
+  if (firstName.value !="" && lastName.value!=""){
+    fileIdName = firstName.value + " "+lastName.value;
   await init(constraints);
   }else{
-    errorMsgElement.innerHTML = "please enter a valid User Id";
-    userId.value="";
+    errorMsgElement.innerHTML = "please enter both first name and last name";
+    firstName.value="";
+    lastName.value="";
   }
 });
 
