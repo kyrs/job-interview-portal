@@ -131,7 +131,8 @@ recordButton.addEventListener('click', () => {
        console.log("started recording");
       console.log("counter : "+ counter);
     }else{
-      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session to continue the study"+"</h2>";
+      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session so that she/he can save your videos. Importantly, do not close this window otherwise your videos will be lost."+"</h2>";
+      showButton();
       recordButton.textContent="Next.";
     }
     
@@ -232,7 +233,7 @@ async function init(constraints) {
    errorMsgElement.innerHTML="";
     document.getElementById('suggestions').style.display = "none";
    document.getElementById('checkButton').style.display ="inline-block";
-   quesMsgElement.innerHTML ="<h2>" +"Hello.The job interview will be conducted via this platform. Press “Start Record” to get started" +"</h2>";
+   quesMsgElement.innerHTML ="<h2>" +"Hello.The job interview will be conducted via this platform.There will be questions appearing on your screen, and you will have to answer them by speaking in front of the webcam. Once you have answered a question, click on the “Next” button to go the next question. Press “Start Record” to get started." +"</h2>";
    
    // setting up the question list to ask
    // var compReader = JSON.parse(compQues);

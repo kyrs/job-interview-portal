@@ -11,7 +11,6 @@ var randomQues = [
 "<p> Thank you for your answer.</p> Now, can you please tell me how you deal with pressure or stressful situations.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what your ideal job would be.",
 "<p> Thank you for your answer.</p> Now, can you please tell me how you handle criticism.",
-"<p> Thank you for your answer.</p> Now, can you please tell me why you are interested in this position.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what your best boss and your worst boss would be.",
 "<p> Thank you for your answer.</p> Now, can you please tell me more about your work style. Do you like working in a team environment or do you prefer working alone ?.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what challenges you are looking for in a job.",
@@ -23,7 +22,7 @@ var randomQues = [
 "<p> Thank you for your answer.</p> Now, can you please tell me how people usually describe you.",
 "<p> Thank you for your answer.</p> Now, can you please tell me the most important responsibilities you’ve had to handle.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what goals, including career goals, you have set for yourself.",
-"<p> Thank you for your answer.</p> Now, can you please tell me about a time when you had too much to do, but not enough resources (such as time or money). How did you handle the pressure and achieve goals?",
+"<p> Thank you for your answer.</p> Now, can you please tell me about a time when you had too much to do, but not enough resources (such as time or money). How did you handle the pressure and achieve goals ?",
 "<p> Thank you for your answer.</p> Now, can you please tell me about a time you had to deal with a team member who constantly opposed your ideas. How did you handle it ?"
 ];
 var randomQuesToAsk = 2;
