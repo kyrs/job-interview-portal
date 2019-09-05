@@ -233,7 +233,7 @@ async function init(constraints) {
    errorMsgElement.innerHTML="";
     document.getElementById('suggestions').style.display = "none";
    document.getElementById('checkButton').style.display ="inline-block";
-   quesMsgElement.innerHTML ="<h2>" +"Hello.The job interview will be conducted via this platform.There will be questions appearing on your screen, and you will have to answer them by speaking in front of the webcam. Once you have answered a question, click on the “Next” button to go the next question. Press “Start Record” to get started." +"</h2>";
+   quesMsgElement.innerHTML ="<h2>" +"Hello.The job interview will be conducted via this platform.There will be questions appearing on your screen, and you will have to answer them by speaking in front of the webcam. Once you have answered a question, click on the “Next” button to go to the next question. Press “Start Record” to get started." +"</h2>";
    
    // setting up the question list to ask
    // var compReader = JSON.parse(compQues);

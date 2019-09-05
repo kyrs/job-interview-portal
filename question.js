@@ -1,7 +1,7 @@
 var compQues = [
 "To start off, please present yourself and your current situation.",
 "<p> Thank you for your answer.</p> Now, can you please tell me about a situation in which you had to manage several tasks or projects at the same time, and describe how you handled this situation.",
-"<p> Thank you for your answer.</p> Now, can you please give me an example of a situation in which you took the initiative to get things done, and in which you were successful."
+"<p> Thank you for your answer.</p> Now, can you please give me an example of a situation in which you took the initiative to get things done and in which you were successful."
 ];
 var randomQues = [
 "<p> Thank you for your answer.</p> Now, can you please tell me why we should hire you.",
@@ -12,7 +12,7 @@ var randomQues = [
 "<p> Thank you for your answer.</p> Now, can you please tell me what your ideal job would be.",
 "<p> Thank you for your answer.</p> Now, can you please tell me how you handle criticism.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what your best boss and your worst boss would be.",
-"<p> Thank you for your answer.</p> Now, can you please tell me more about your work style. Do you like working in a team environment or do you prefer working alone ?.",
+"<p> Thank you for your answer.</p> Now, can you please tell me more about your work style. Do you like working in a team environment or do you prefer working alone ?",
 "<p> Thank you for your answer.</p> Now, can you please tell me what challenges you are looking for in a job.",
 "<p> Thank you for your answer.</p> Now, can you please tell me what you have learned from your mistakes.",
 "<p> Thank you for your answer.</p> Now, can you please tell me about a difficult work situation or project you experienced and how you overcame it.",
