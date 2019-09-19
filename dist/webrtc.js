@@ -131,7 +131,7 @@ recordButton.addEventListener('click', () => {
        console.log("started recording");
       console.log("counter : "+ counter);
     }else{
-      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. Please call the supervisor of the session so that she/he can save your videos. Importantly, do not close this window otherwise your videos will be lost."+"</h2>";
+      quesMsgElement.innerHTML ="<h2>" +"<p>Thank you for your answer.</p>The interview is now over. I will contact you later if I need more information. Have a nice day. Please call the supervisor of the session so that she/he can save your videos. Importantly, do not close this window otherwise your videos will be lost."+"</h2>";
       showButton();
       recordButton.textContent="Next.";
     }
