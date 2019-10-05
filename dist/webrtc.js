@@ -81,7 +81,9 @@ document.querySelector('#download').addEventListener('click', () => {
      var filename = processTextName(questionReader[url[1]]);
      console.log("created zip.");
      console.log("filename. "+ filename);
-     zip.file(fileIdName+"-"+filename+".webm", data, {binary:true});
+     var tempCount = url[1]+1;
+     console.log(tempCount);
+     zip.file(fileIdName+"-Q-"+tempCount.toString()+" "+filename+".webm", data, {binary:true});
      count++;
      console.log(count);
      if (count == allUrlList.length) {
